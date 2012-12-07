@@ -256,7 +256,7 @@
     if (m = selector.match(easy)) {
       if (m[1]) return (el = byId(root, m[1])) ? [el] : []
       if (m[2]) return arrayify(root[byTag](m[2]))
-      if (hasByClass && m[3]) return arrayify(root[byClass](m[3]))
+      if (hasByClass && root[byClass] && m[3]) return arrayify(root[byClass](m[3]))
     }
 
     return select(selector, root)
